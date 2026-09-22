@@ -1,0 +1,29 @@
+user:
+  target: "{{ env_var('DBT_TARGET', 'dev') }}"
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: quick-cacao-452522-g1
+      dataset: dev_db
+      threads: 4
+      priority: interactive
+      retries: 1
+
+    staging:
+      type: bigquery
+      method: oauth
+      project: quick-cacao-452522-g1
+      dataset: staging_db
+      threads: 4
+      priority: interactive
+      retries: 1
+
+    prod:
+      type: bigquery
+      method: oauth
+      project: quick-cacao-452522-g1
+      dataset: prod_db
+      threads: 4
+      priority: interactive
+      retries: 1
